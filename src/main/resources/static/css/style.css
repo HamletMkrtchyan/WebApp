@@ -1,0 +1,445 @@
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+h1 {
+    font-family: Arial, sans-serif;
+    color: #5a6268;
+    margin-bottom: 10px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+nav ul li a {
+    color: #5a6268;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #343a40;
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+main {
+    margin: 20px;
+}
+h2, h3 {
+    color: #5a6268;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #6c757d;
+    text-align: left;
+}
+th {
+    background-color: #6c757d;
+    color: white;
+}
+footer {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #407042;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #468c4a;
+}
+
+.button:active {
+    background-color: #51a155;
+}
+.delete-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-link:hover {
+    background-color: #ff3333;
+}
+
+.delete-link:active {
+    background-color: #ff1a1a;
+}
+.edit-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #337ab7;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-link:hover {
+    background-color: #23527c;
+}
+
+.edit-link:active {
+    background-color: #1a3d5a;
+}
+.form-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-container input[type="submit"] {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form-container input[type="submit"]:active {
+    background-color: #3e8e41;
+}
+.edit-link,
+.delete-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-link {
+    background-color: #337ab7;
+    color: white;
+}
+
+.edit-link:hover {
+    background-color: #23527c;
+}
+
+.delete-link {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.delete-link:hover {
+    background-color: #ff3333;
+}
+
+/* Header */
+.header-class {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.title-class {
+    font-family: Arial, sans-serif;
+    color: #5a6268;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+.nav-class ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-class li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.menu-item a {
+    color: #5a6268;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: #343a40;
+    text-decoration: underline;
+}
+
+/* Body */
+.body-class {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Main */
+.main-class {
+    margin: 20px;
+}
+
+.section-title {
+    color: #5a6268;
+}
+
+/* Form */
+.order-form {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #407042;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #468c4a;
+}
+/* Main */
+.main-class {
+    margin: 20px;
+    margin-bottom: 70px; /* Dodany margines dolny */
+}
+
+
+.submit-button:active {
+    background-color: #51a155;
+}
+
+/* Footer */
+.footer-class {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-text {
+    color: white;
+}
+
+/* Form */
+.order-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5a6268;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #407042;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #468c4a;
+}
+
+.submit-button:active {
+    background-color: #51a155;
+}
+
+/* Form */
+.order-form {
+    max-width: 300px; /* Zmniejszono maksymalną szerokość formularza */
+    margin: 0; /* Zresetowano marginesy */
+    padding: 20px; /* Zmniejszono wcięcie wewnątrz formularza */
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Ustawiono tekst na lewo */
+    margin-left: auto; /* Umieszczono formularz z lewej strony */
+    margin-right: auto; /* Umieszczono formularz z lewej strony */
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5a6268;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.footer-class {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+}
+main {
+    margin-bottom: 90px;
+}
+
+.submit-button {
+    display: block;
+    margin: 0 auto; /* Wyśrodkowano przycisk */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #407042;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.opinions-container {
+    flex: 1;
+    margin-left: 10px;
+}
