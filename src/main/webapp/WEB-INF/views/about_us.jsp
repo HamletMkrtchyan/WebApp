@@ -24,12 +24,12 @@
 <main class="site-main">
   <section class="section-block">
     <h2 class="section-title">Historia Naszego Sklepu</h2>
-    <p class="section-content">"Mięsna Kraina" to rodzinny sklep mięsny, który oferuje wysokiej jakości świeże mięso i wyroby mięsne. Naszym celem jest dostarczanie klientom najświeższych i najsmaczniejszych produktów mięsnych, pochodzących od lokalnych i zaufanych dostawców.</p>
+    <p class="section-content">"Waga Mięsa" to rodzinny sklep mięsny, który oferuje wysokiej jakości świeże mięso i wyroby mięsne. Naszym celem jest dostarczanie klientom najświeższych i najsmaczniejszych produktów mięsnych, pochodzących od lokalnych i zaufanych dostawców.</p>
   </section>
 
   <section class="section-block">
     <h2 class="section-title">Nasza historia</h2>
-    <p class="section-content">"Mięsna Kraina" rozpoczęła swoją działalność w 1995 roku jako mały, lokalny sklep mięsny. Dzięki naszej pasji do mięsa oraz zaangażowaniu w zapewnienie najwyższej jakości produktów, szybko zdobyliśmy zaufanie i lojalność naszych klientów.</p>
+    <p class="section-content">"Waga Mięsa" rozpoczęła swoją działalność w 1995 roku jako mały, lokalny sklep mięsny. Dzięki naszej pasji do mięsa oraz zaangażowaniu w zapewnienie najwyższej jakości produktów, szybko zdobyliśmy zaufanie i lojalność naszych klientów.</p>
   </section>
 
   <section class="section-block">
@@ -39,7 +39,7 @@
 
   <section class="section-block">
     <h2 class="section-title">Zapraszamy!</h2>
-    <p class="section-content">Zapraszamy do odwiedzenia "Mięsnej Krainy" i odkrycia naszego szerokiego wyboru świeżego mięsa oraz przygotowanych z pasją wyrobów mięsnych. Jesteśmy gotowi sprostać Twoim oczekiwaniom i zapewnić Ci doskonałe doświadczenie zakupowe w naszym sklepie.</p>
+    <p class="section-content">Zapraszamy do odwiedzenia "Waga Mięsa" i odkrycia naszego szerokiego wyboru świeżego mięsa oraz przygotowanych z pasją wyrobów mięsnych. Jesteśmy gotowi sprostać Twoim oczekiwaniom i zapewnić Ci doskonałe doświadczenie zakupowe w naszym sklepie.</p>
   </section>
 </main>
 

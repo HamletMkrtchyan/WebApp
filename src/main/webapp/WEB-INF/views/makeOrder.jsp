@@ -50,7 +50,7 @@
 
 
       <label for="quantity">Waga: kg</label>
-      <input type="text" id="quantity" name="quantity" placeholder="kg" class="form-input"><br>
+      <input type="text" id="quantity" name="quantity" placeholder="kg" class="form-input" step="0.01" min="0">
       <input type="submit" class="form-submit button" value="Złóż Zamówienie">
     </form>
   </section>

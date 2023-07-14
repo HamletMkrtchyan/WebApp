@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Potwierdzenie Zamówienia</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body class="confirmation-body">
 <h2 class="confirmation-heading">Dziękujemy za złożenie zamówienia!</h2>
