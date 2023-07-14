@@ -1,5 +1,6 @@
 package pl.mkrtchyan.springbootapp.controller;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

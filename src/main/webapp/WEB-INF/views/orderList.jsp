@@ -31,7 +31,7 @@
       <td>${order.user.address}</td>
       <td>${order.product.name}</td>
       <td>${order.quantity} kg</td>
-      <td><fmt:formatNumber value="${quantity * product.price}" type="currency" currencySymbol="zł" /></td>
+      <td><fmt:formatNumber value="${order.quantity * order.product.price}" type="currency" currencySymbol="zł" /></td>
       <td>${order.orderTime}</td>
       <td>
         <form action="/mark-as-done" method="post">
