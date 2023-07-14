@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -7,59 +6,58 @@
   <title>Złóż Zamówienie - Nasz Sklep Mięsny</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
-<header>
-  <h1>Złóż Zamówienie</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Strona Główna</a></li>
-      <li><a href="/products">Produkty</a></li>
-      <li><a href="/about">O Nas</a></li>
-      <li><a href="/contact">Kontakt</a></li>
-      <li><a href="/makeOrder">Złóż zamówienia</a></li>
-      <li><a href="/opinions">Napisz opinie</a></li>
-      <li><a href="/admin">Admin</a></li>
-
-
+<body class="site-body">
+<header class="site-header">
+  <h1 class="header-title">Złóż Zamówienie</h1>
+  <nav class="header-nav">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/">Strona Główna</a></li>
+      <li class="nav-item"><a href="/products">Produkty</a></li>
+      <li class="nav-item"><a href="/about">O Nas</a></li>
+      <li class="nav-item"><a href="/contact">Kontakt</a></li>
+      <li class="nav-item"><a href="/makeOrder">Złóż zamówienia</a></li>
+      <li class="nav-item"><a href="/opinions">Napisz opinie</a></li>
+      <li class="nav-item"><a href="/admin">Admin</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
-  <h2>Złóż Zamówienie</h2>
-  <form action="/make-order-form" method="post">
-    <label for="name">Imię:</label><br>
-    <input type="text" id="name" name="firstName"><br>
+<main class="site-main">
+  <section class="section-block">
+    <h2 class="section-title">Złóż Zamówienie</h2>
+    <form class="form-block" action="/make-order-form" method="post">
+      <label for="name">Imię:</label>
+      <input type="text" id="name" name="firstName" class="form-input">
 
-    <label for="surname">Nazwisko:</label><br>
-    <input type="text" id="surname" name="lastName"><br>
+      <label for="surname">Nazwisko:</label>
+      <input type="text" id="surname" name="lastName" class="form-input">
 
-    <label for="address">Adres:</label><br>
-    <input type="text" id="address" name="address"><br>
+      <label for="address">Adres:</label>
+      <input type="text" id="address" name="address" class="form-input">
 
-    <label for="phone">Telefon:</label><br>
-    <input type="text" id="phone" name="phone"><br>
+      <label for="phone">Telefon:</label>
+      <input type="text" id="phone" name="phone" class="form-input">
 
-    <label for="email">E-mail:</label><br>
-    <input type="text" id="email" name="email"><br>
+      <label for="email">E-mail:</label>
+      <input type="text" id="email" name="email" class="form-input">
 
-    <label for="product">Produkt:</label><br>
-    <select id="product" name="productId">
-      <c:forEach var="product" items="${products}">
-        <option value="${product.id}">${product.name} - ${product.price}</option>
-      </c:forEach>
-    </select><br>
+      <label for="product">Produkt:</label>
+      <select id="product" name="productId"  class="form-input">
+        <c:forEach var="product" items="${products}">
+          <option value="${product.id}">${product.name} - ${product.price}</option>
+        </c:forEach>
+      </select>
 
 
-    <label for="quantity">Waga: kg</label><br>
-    <input type="text" id="quantity" name="quantity" placeholder="kg"><br><br>
-
-    <input type="submit"class="button" value="Złóż Zamówienie">
-  </form>
+      <label for="quantity">Waga: kg</label>
+      <input type="text" id="quantity" name="quantity" placeholder="kg" class="form-input"><br>
+      <input type="submit" class="form-submit button" value="Złóż Zamówienie">
+    </form>
+  </section>
 </main>
 
-<footer>
-  <p>&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
+<footer class="site-footer">
+  <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>

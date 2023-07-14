@@ -6,29 +6,29 @@
     <title>Nasz Sklep Mięsny : Mięsna Kraina</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
-<header>
-    <h1>Nasz Sklep Mięsny Kraina</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Strona Główna</a></li>
-            <li><a href="/products">Produkty</a></li>
-            <li><a href="/about">O Nas</a></li>
-            <li><a href="/contact">Kontakt</a></li>
-            <li><a href="/admin">Admin</a></li>
+<body class="site-body">
+<header class="site-header">
+    <h1 class="header-title">Nasz Sklep Mięsny Kraina</h1>
+    <nav class="header-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="/">Strona Główna</a></li>
+            <li class="nav-item"><a href="/products">Produkty</a></li>
+            <li class="nav-item"><a href="/about">O Nas</a></li>
+            <li class="nav-item"><a href="/contact">Kontakt</a></li>
+            <li class="nav-item"><a href="/admin">Admin</a></li>
         </ul>
     </nav>
 </header>
-<main>
-    <form action="/admin" method="post">
-        Admin Code: <input type="password" name="password" id="password">
-        <input type="submit" value="Go">
+<main class="site-main">
+    <form class="admin-form" action="/admin" method="post">
+        <label for="password">Admin Code:</label>
+        <input type="password" name="password" id="password" class="form-input">
+        <input type="submit" value="Go" class="form-submit button">
     </form>
 </main>
 
-
-<footer>
-    <p>&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
+<footer class="site-footer">
+    <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>
