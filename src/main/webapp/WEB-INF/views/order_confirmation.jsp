@@ -3,13 +3,13 @@
 <html>
 <head>
     <title>Potwierdzenie Zamówienia</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
-<body class="body-class">
-<h2 class="title-class">Dziękujemy za złożenie zamówienia!</h2>
+<body class="confirmation-body">
+<h2 class="confirmation-heading">Dziękujemy za złożenie zamówienia!</h2>
 
-<p class="summary-class">Podsumowanie zamówienia:</p>
-<table class="summary-table">
+<p class="confirmation-paragraph">Podsumowanie zamówienia:</p>
+<table class="confirmation-table">
     <tr>
         <td class="table-label">Imię:</td>
         <td class="table-value">${firstName}</td>
@@ -40,15 +40,16 @@
     </tr>
     <tr>
         <td class="table-label">Do zapłaty:</td>
-        <td class="table-label"><fmt:formatNumber value="${quantity * product.price}" type="currency" currencySymbol="zł" /></td>
+        <td class="table-label"><fmt:formatNumber value="${quantity * product.price}" type="currency"
+                                                  currencySymbol="zł"/></td>
 
     </tr>
 </table>
 
-<p class="summary-class">Prosimy o sprawdzenie powyższych danych. Jeżeli coś jest nie tak, prosimy o kontakt.</p>
+<p class="confirmation-paragraph">Prosimy o sprawdzenie powyższych danych. Jeżeli coś jest nie tak, prosimy o
+    kontakt.</p>
 
-<button onclick="window.location.href='/makeOrder'" class="button back-button">Powrót</button>
-
+<button onclick="window.location.href='/makeOrder'" class="confirmation-button">Powrót</button>
 
 </body>
 </html>

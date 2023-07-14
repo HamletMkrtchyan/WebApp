@@ -5,42 +5,36 @@
 <head>
   <title>Produkty - Nasz Sklep Mięsny</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-
 </head>
-<body>
-<header>
-  <h1>Produkty</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Strona Główna</a></li>
-      <li><a href="/products">Produkty</a></li>
-      <li><a href="/about">O Nas</a></li>
-      <li><a href="/contact">Kontakt</a></li>
-      <li><a href="/makeOrder">Złóż zamówienia</a></li>
-      <li><a href="/opinions">Napisz opinie</a></li>
-      <li><a href="/admin">Admin</a></li>
-
-
-
+<body class="site-body">
+<header class="site-header">
+  <h1 class="header-title">Produkty</h1>
+  <nav class="header-nav">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/">Strona Główna</a></li>
+      <li class="nav-item"><a href="/products">Produkty</a></li>
+      <li class="nav-item"><a href="/about">O Nas</a></li>
+      <li class="nav-item"><a href="/contact">Kontakt</a></li>
+      <li class="nav-item"><a href="/makeOrder">Złóż zamówienia</a></li>
+      <li class="nav-item"><a href="/opinions">Napisz opinie</a></li>
+      <li class="nav-item"><a href="/admin">Admin</a></li>
     </ul>
   </nav>
 </header>
-<main>
-  <h2>Nasze Produkty</h2>
+<main class="site-main">
+  <h2 class="main-title">Nasze Produkty</h2>
 
   <c:forEach var="product" items="${products}">
-    <div style="border:1px solid #000; padding:15px; margin-bottom:20px;">
-      <h3 style="color: #46494c;">${product.name}</h3>
-      Opis: <p>${product.description}</p>
-      <p>Cena: <span style="font-weight: bold;">${product.price} zł/kg</span></p>
+    <div class="product-card">
+      <h3 class="product-title">${product.name}</h3>
+      <p class="product-desc">Opis: ${product.description}</p>
+      <p class="product-price">Cena: <span>${product.price} zł/kg</span></p>
     </div>
   </c:forEach>
 </main>
 
-
-<footer class="footer-class">
-  <p>&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
+<footer class="site-footer">
+  <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
 </footer>
-
 </body>
 </html>

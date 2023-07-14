@@ -4,12 +4,13 @@
 <html>
 <head>
   <title>Lista Zamówień</title>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
-<body>
-<h2>Lista Zamówień</h2>
+<body class="order-admin-page-body">
+<h2 class="order-admin-heading">Lista Zamówień</h2>
 
-<table>
+<table class="order-admin-table">
+
   <tr>
     <th>Id</th>
     <th>Imię użytkownika</th>
@@ -39,11 +40,11 @@
         </form>
     </tr>
   </c:forEach>
-
-  <form action="/goBackAdminPage" method="post">
-    <input type="submit" value="Powrót do Admin" class="form-submit">
-  </form>
-
 </table>
+
+<form action="/goBackAdminPage" method="post" class="form-admin-back">
+  <input type="submit" value="Powrót do Admin" class="form-admin-back-submit">
+</form>
+
 </body>
 </html>

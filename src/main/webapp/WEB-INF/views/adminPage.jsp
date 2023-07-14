@@ -6,25 +6,24 @@
     <title>Nasz Sklep Mięsny : Mięsna Kraina</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
-<header>
-    <h1>Nasz Sklep Mięsny Kraina - Strona Admin</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Strona Główna</a></li>
-            <li><a href="/addProduct">Dodaj product</a></li>
-            <li><a href="/orderList">Lista zamówień</a></li>
-            <li><a href="/opinionList">Lista opinii</a></li>
-            <li><a href="/admin">Admin</a></li>
-
+<body class="site-body">
+<header class="site-header">
+    <h1 class="header-title">Nasz Sklep Mięsny Kraina - Strona Admin</h1>
+    <nav class="header-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="/">Strona Główna</a></li>
+            <li class="nav-item"><a href="/addProduct">Dodaj product</a></li>
+            <li class="nav-item"><a href="/orderList">Lista zamówień</a></li>
+            <li class="nav-item"><a href="/opinionList">Lista opinii</a></li>
+            <li class="nav-item"><a href="/admin">Admin</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- content ... -->
 
-
-<footer>
-    <p>&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
+<footer class="site-footer">
+    <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
 </footer>
 </body>
 </html>
