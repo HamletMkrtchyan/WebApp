@@ -98,8 +98,6 @@ public class AdminController {
     @GetMapping("/orderList")
     public String orderListShow(Model model) {
         List<Order> orders = orderRepository.findAll(Sort.by(Sort.Direction.DESC, "orderTime"));
-        List<User> users = userRepository.findAll();
-        model.addAttribute("users", users);
         model.addAttribute("orders", orders);
         return "orderList";
 

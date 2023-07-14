@@ -6,6 +6,18 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body class="product-add-body">
+<header class="site-header">
+    <h1 class="header-title">Nasz Sklep Mięsny Kraina - Strona Admin</h1>
+    <nav class="header-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="/">Strona Główna</a></li>
+            <li class="nav-item"><a href="/addProduct">Dodaj product</a></li>
+            <li class="nav-item"><a href="/orderList">Lista zamówień</a></li>
+            <li class="nav-item"><a href="/opinionList">Lista opinii</a></li>
+            <li class="nav-item"><a href="/admin">Admin</a></li>
+        </ul>
+    </nav>
+</header>
 <div class="product-add-content">
     <div class="product-add-form-container">
         <form action="productAdd" method="post" class="product-add-form">

@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nasz Sklep Mięsny : Mięsna Kraina</title>
+    <title>Nasz Sklep Mięsny : Waga Mięsa</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body class="site-body">
 <header class="site-header">
-    <h1 class="header-title">Nasz Sklep Mięsny Kraina</h1>
+    <h1 class="header-title">Nasz Sklep Waga Mięsa</h1>
     <nav class="header-nav">
         <ul class="nav-list">
             <li class="nav-item"><a href="/">Strona Główna</a></li>
@@ -22,7 +22,7 @@
 <main class="site-main">
     <form class="admin-form" action="/admin" method="post">
         <label for="password">Admin Code:</label>
-        <input type="password" name="password" id="password" class="form-input">
+        <input type="password" name="password" id="password" class="form-input" placeholder="admin">
         <input type="submit" value="Go" class="form-submit button">
     </form>
 </main>

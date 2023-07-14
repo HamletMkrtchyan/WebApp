@@ -20,7 +20,6 @@
     </nav>
 </header>
 
-<!-- content ... -->
 
 <footer class="site-footer">
     <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>
