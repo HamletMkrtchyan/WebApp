@@ -42,17 +42,6 @@ public class HomeController {
     }
 
 
-    @GetMapping("/products")
-    public String product(Model model) {
-        List<Product> products = productRepository.findAll();
-        model.addAttribute("products", products);
-        return "product";
-    }
-
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
 
     @GetMapping("/admin")
     public String admin() {

@@ -2,6 +2,7 @@ package pl.mkrtchyan.springbootapp.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -12,9 +13,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank(message = "Name is mandatory")
+    @Column(unique = true)
     private String name;
-    @Size(max = 200)
+    @Size(min = 5, max = 200)
     private String description;
+    @Min(0)
     private double price;
 
 
