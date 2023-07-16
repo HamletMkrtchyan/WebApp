@@ -14,7 +14,6 @@ public class Opinion {
     private User user;
     private String name;
 
-
     private String substance;
     @Max(5)
     @Min(1)

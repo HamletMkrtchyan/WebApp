@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Admin {
@@ -13,7 +14,7 @@ public class Admin {
     private Long id;
 
     @NotBlank(message = "Password is mandatory")
-
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     private String password;
 
     public String getPassword() {

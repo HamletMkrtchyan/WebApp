@@ -523,6 +523,10 @@ body.site-body {
 .update-product-back-link:hover {
     color: #333;
 }
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
 
 
 

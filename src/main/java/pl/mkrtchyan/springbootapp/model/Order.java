@@ -1,6 +1,8 @@
 package pl.mkrtchyan.springbootapp.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -15,8 +17,9 @@ public class Order {
 
     @ManyToOne
     private Product product;
-
+    @Min(0)
     private double quantity;
+    @PastOrPresent
     private LocalDateTime orderTime;
 
 
