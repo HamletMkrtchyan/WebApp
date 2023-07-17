@@ -43,6 +43,7 @@ public class OrderController {
     public String makeOrderForm(@RequestParam("firstName") String firsName, @RequestParam("lastName") String lastName,
                                 @RequestParam("email") String email, @RequestParam("address") String address,
                                 @RequestParam("phone") int phone, @RequestParam("quantity") double quantity, @RequestParam("productId") Long productId, Model model) {
+
         model.addAttribute("firstName", firsName);
         model.addAttribute("lastName", lastName);
         model.addAttribute("email", email);

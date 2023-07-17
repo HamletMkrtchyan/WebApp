@@ -3,6 +3,7 @@ package pl.mkrtchyan.springbootapp.model;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "opinions")
@@ -12,6 +13,7 @@ public class Opinion {
     private Long id;
     @ManyToOne
     private User user;
+    @NotBlank(message = "Podaj swoje imię")
     private String name;
 
     private String substance;

@@ -34,8 +34,19 @@
                 <label for="substance">Opinia:</label>
                 <textarea id="substance" name="substance" maxlength="100" class="form-input"></textarea>
 
-                <label for="rating">Ocena (1-5):</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" class="form-input">
+                <label>Ocena:</label>
+                <div>
+                    <input type="radio" id="rating1" name="rating" value="1">
+                    <label for="rating1">1</label>
+                    <input type="radio" id="rating2" name="rating" value="2">
+                    <label for="rating2">2</label>
+                    <input type="radio" id="rating3" name="rating" value="3">
+                    <label for="rating3">3</label>
+                    <input type="radio" id="rating4" name="rating" value="4">
+                    <label for="rating4">4</label>
+                    <input type="radio" id="rating5" name="rating" value="5">
+                    <label for="rating5">5</label>
+                </div>
 
                 <input type="submit" value="Wyślij Opinię" class="form-submit button" onclick="return confirm('Czy na pewno chcesz wysłać opinie?');">
             </form>
