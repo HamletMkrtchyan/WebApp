@@ -455,7 +455,7 @@ body.site-body {
 }
 
 .product-add-form-container, .product-list-table-container {
-    width: 45%;
+    width: 50%;
 }
 
 @media (max-width: 800px) {

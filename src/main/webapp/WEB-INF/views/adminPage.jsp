@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nasz Sklep Mięsny : Mięsna Kraina</title>
+    <title>Nasz Sklep Mięsny : Waga Mięsa</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body class="site-body">

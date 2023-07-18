@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -47,7 +48,7 @@
                 <tr>
                     <td>${product.name}</td>
                     <td>${product.description}</td>
-                    <td>${product.price}</td>
+                    <td><fmt:formatNumber value="${product.price}" type="number" minFractionDigits="2" maxFractionDigits="2" /> zł/kg</td>
                     <td>
                         <a href="/updateAddedProduct?id=${product.id}"
                            onclick="return confirm('Czy na pewno chcesz edytować ten produkt?');">Edytuj</a>
