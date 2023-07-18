@@ -23,7 +23,7 @@
     <form class="admin-form" action="/admin" method="post">
         <label for="password">Admin Code:</label>
         <input type="password" name="password" id="password" class="form-input" placeholder="admin">
-        <input type="submit" value="Go" class="form-submit button">
+        <input type="submit" value="Idź do admin" class="form-submit button">
     </form>
 </main>
 

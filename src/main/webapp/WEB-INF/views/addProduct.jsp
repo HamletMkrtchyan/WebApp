@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Dodanie Produktu</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body class="product-add-body">
 <header class="site-header">
@@ -20,7 +20,7 @@
 </header>
 <div class="product-add-content">
     <div class="product-add-form-container">
-        <form action="productAdd" method="post" class="product-add-form">
+        <form action="/productAdd" method="post" class="product-add-form">
             <h2 class="product-add-heading">Dodaj produkt</h2>
             <label for="name">Nazwa:</label>
             <input type="text" id="name" name="name" placeholder="Nazwa"><br><br>
@@ -30,7 +30,7 @@
             <input type="text" id="price" name="price" placeholder="Cena"><br><br>
             <input type="submit" value="Dodaj">
         </form>
-        <form action="goBackAdminPage" method="post" class="admin-back-form">
+        <form action="/goBackAdminPage" method="post" class="admin-back-form">
             <input type="submit" value="Powrót do Admin" class="admin-back-btn">
         </form>
     </div>

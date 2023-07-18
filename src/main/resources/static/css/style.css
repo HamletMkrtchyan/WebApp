@@ -527,6 +527,35 @@ body.site-body {
     height: 50px;
     margin-right: 10px;
 }
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    margin-top: 20px;
+    flex-grow: 1;
+    height: 34px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-button {
+    margin-top: 20px;
+    height: 35px;
+    border: none;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #545a5d;
+}
+
 
 
 
