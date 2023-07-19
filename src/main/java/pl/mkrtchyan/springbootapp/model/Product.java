@@ -15,7 +15,7 @@ public class Product {
     @NotBlank(message = "Name is mandatory")
     @Column(unique = true)
     private String name;
-    @Size(min = 5, max = 200)
+    @Size(max = 200)
     private String description;
     @Min(0)
     private double price;

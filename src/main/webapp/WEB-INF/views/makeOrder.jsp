@@ -26,17 +26,17 @@
   <section class="section-block">
     <h2 class="section-title">Złóż Zamówienie</h2>
     <form class="form-block" action="/make-order-form" method="post">
-      <label for="name">Imię:</label>
-      <input type="text" id="name" name="firstName" class="form-input">
+      <label for="firstName">Imię:</label>
+      <input type="text" id="firstName" name="firstName" class="form-input" required oninvalid="this.setCustomValidity('Proszę wprowadzić imię')" oninput="this.setCustomValidity('')">
 
-      <label for="surname">Nazwisko:</label>
-      <input type="text" id="surname" name="lastName" class="form-input">
+      <label for="lastName">Nazwisko:</label>
+      <input type="text" id="lastName" name="lastName" class="form-input" required oninvalid="this.setCustomValidity('Proszę wprowadzić Nazwisko')" oninput="this.setCustomValidity('')">
 
       <label for="address">Adres:</label>
-      <input type="text" id="address" name="address" class="form-input">
+      <input type="text" id="address" name="address" class="form-input" required oninvalid="this.setCustomValidity('Proszę wprowadzić adres dostawy')" oninput="this.setCustomValidity('')">
 
       <label for="phone">Telefon:</label>
-      <input type="text" id="phone" name="phone" class="form-input">
+      <input type="text" id="phone" name="phone" class="form-input" required oninvalid="this.setCustomValidity('Proszę wprowadzić nr. telefonu')" oninput="this.setCustomValidity('')">
 
       <label for="email">E-mail:</label>
       <input type="text" id="email" name="email" class="form-input">
@@ -50,7 +50,7 @@
 
 
       <label for="quantity">Waga: kg</label>
-      <input type="text" id="quantity" name="quantity" placeholder="kg" class="form-input" step="0.01" min="0">
+      <input type="text" id="quantity" name="quantity" placeholder="kg" class="form-input" step="0.01" min="0"  required oninvalid="this.setCustomValidity('Proszę wprowadzić wage towaru')" oninput="this.setCustomValidity('')">
       <input type="submit" class="form-submit button" value="Złóż Zamówienie">
     </form>
   </section>

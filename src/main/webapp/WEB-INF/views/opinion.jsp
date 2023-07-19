@@ -29,7 +29,7 @@
             <h2 class="section-title">Napisz Opinię</h2>
             <form class="form-block" action="/opinionForm" method="post"><br>
                 <label for="name">Imię:</label>
-                <input type="text" id="name" name="name" class="form-input">
+                <input type="text" id="name" name="name" class="form-input" required oninvalid="this.setCustomValidity('Proszę wprowadzić imię')" oninput="this.setCustomValidity('')">
 
                 <label for="substance">Opinia:</label>
                 <textarea id="substance" name="substance" maxlength="100" class="form-input"></textarea>

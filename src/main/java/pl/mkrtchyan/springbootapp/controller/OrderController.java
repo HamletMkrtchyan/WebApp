@@ -40,29 +40,13 @@ public class OrderController {
     }
 
     @PostMapping("/make-order-form")
-    public String makeOrderForm(@RequestParam("firstName") String firsName, @RequestParam("lastName") String lastName,
-                                @RequestParam("email") String email, @RequestParam("address") String address,
-                                @RequestParam("phone") int phone, @RequestParam("quantity") double quantity, @RequestParam("productId") Long productId, Model model) {
-
-        model.addAttribute("firstName", firsName);
-        model.addAttribute("lastName", lastName);
-        model.addAttribute("email", email);
-        model.addAttribute("address", address);
-        model.addAttribute("phone", phone);
-        model.addAttribute("quantity", quantity);
-
+    public String makeOrderForm(@ModelAttribute User user, @RequestParam("quantity") double quantity, @RequestParam("productId") Long productId, Model model) {
 
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid product Id:" + productId));
         model.addAttribute("product", product);
+        model.addAttribute("quantity", quantity);
 
-
-        User user = new User();
-        user.setFirstName(firsName);
-        user.setLastName(lastName);
-        user.setEmail(email);
-        user.setAddress(address);
-        user.setPhone(phone);
         userRepository.save(user);
 
         Order order = new Order();

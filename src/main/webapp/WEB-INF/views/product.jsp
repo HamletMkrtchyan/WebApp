@@ -28,16 +28,20 @@
     <button type="submit" class="search-button" formaction="/goBackAllProductPage">Wróć</button>
 </form>
 
+
 <main class="site-main">
     <h2 class="main-title">Nasze Produkty</h2>
+
 
     <c:forEach var="product" items="${products}">
         <div class="product-card">
             <h3 class="product-title">${product.name}</h3>
             <p class="product-desc">Opis: ${product.description}</p>
             <p class="product-price">Cena: <span>${product.price} zł/kg</span></p>
+
         </div>
     </c:forEach>
+
 
     <c:if test="${not empty errorMessage}">
         <p class="error">${errorMessage}</p>

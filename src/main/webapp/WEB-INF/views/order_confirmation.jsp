@@ -12,23 +12,23 @@
 <table class="confirmation-table">
     <tr>
         <td class="table-label">Imię:</td>
-        <td class="table-value">${firstName}</td>
+        <td class="table-value">${user.firstName}</td>
     </tr>
     <tr>
         <td class="table-label">Nazwisko:</td>
-        <td class="table-value">${lastName}</td>
+        <td class="table-value">${user.lastName}</td>
     </tr>
     <tr>
         <td class="table-label">Email:</td>
-        <td class="table-value">${email}</td>
+        <td class="table-value">${user.email}</td>
     </tr>
     <tr>
         <td class="table-label">Adres:</td>
-        <td class="table-value">${address}</td>
+        <td class="table-value">${user.address}</td>
     </tr>
     <tr>
         <td class="table-label">Telefon:</td>
-        <td class="table-value">${phone}</td>
+        <td class="table-value">${user.phone}</td>
     </tr>
     <tr>
         <td class="table-label">Ilość:</td>

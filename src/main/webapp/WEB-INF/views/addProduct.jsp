@@ -24,11 +24,11 @@
         <form action="/productAdd" method="post" class="product-add-form">
             <h2 class="product-add-heading">Dodaj produkt</h2>
             <label for="name">Nazwa:</label>
-            <input type="text" id="name" name="name" placeholder="Nazwa"><br><br>
+            <input type="text" id="name" name="name" placeholder="Nazwa" required oninvalid="this.setCustomValidity('Proszę wprowadzić nazwę produktu')" oninput="this.setCustomValidity('')"><br><br>
             <label for="description">Opis:</label>
             <input type="text" id="description" name="description" placeholder="Opis"><br><br>
             <label for="price">Cena:</label>
-            <input type="text" id="price" name="price" placeholder="Cena"><br><br>
+            <input type="text" id="price" name="price" placeholder="Cena" required oninvalid="this.setCustomValidity('Proszę podać cenę')" oninput="this.setCustomValidity('')"><br><br>
             <input type="submit" value="Dodaj">
         </form>
         <form action="/goBackAdminPage" method="post" class="admin-back-form">
