@@ -13,13 +13,13 @@ Strona Klienta
  - Zamawianie Produktów: Klienci mogą składać zamówienia na wybrane produkty.
  - Dodawanie Opinii: Klienci mogą dodawać swoje opinie na temat sklepu.
  - Przeglądanie Opinii: Klienci mogą przeglądać opinie innych użytkowników.
- - 
+   
 Strona Admina
 
  - Zarządzanie Produktami: Administratorzy mogą dodawać, usuwać oraz edytować produkty w sklepie.
  - Przeglądanie Zamówień: Administratorzy mogą przeglądać listę wszystkich zamówień.
  - Oznaczanie Zamówień Jako Wykonane: Po zrealizowaniu zamówienia, administratorzy mogą oznaczyć je jako wykonane.
- - Przeglądanie Opinii: Administratorzy mogą przeglądać opinie napisane przez klientów.
+ - Przeglądanie Opinii: Administratorzy mogą przeglądać opinie i odpowiedzieć na opinie napisane przez klientów.
    
 Technologie:
 
