@@ -11,11 +11,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "First name is mandatory")
+    @NotBlank
     private String firstName;
     private String lastName;
 
-    @Email(message = "Email should be valid")
+    @Email
     private String email;
     private String address;
     private int phone;

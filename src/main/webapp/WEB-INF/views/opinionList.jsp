@@ -9,7 +9,7 @@
 </head>
 <body class="admin-page-body">
 <header class="site-header">
-  <h1 class="header-title">Nasz Sklep Mięsny Kraina - Strona Admin</h1>
+  <h1 class="header-title">Nasz Sklep Waga Mięsa - Strona Admin</h1>
   <nav class="header-nav">
     <ul class="nav-list">
       <li class="nav-item"><a href="/">Strona Główna</a></li>
@@ -27,15 +27,24 @@
       <th>Użytkownik</th>
       <th>Treść opinii</th>
       <th>Ocena</th>
+      <th>Odpowiedź Admina</th>
+      <th>Akcje</th>
     </tr>
     <c:forEach items="${opinions}" var="opinion">
       <tr>
         <td>${opinion.name}</td>
         <td>${opinion.substance}</td>
         <td>${opinion.rating}</td>
+        <td>${opinion.adminReply}</td>
+        <td>
+          <form class="reply-form" action="/adminReply" method="post">
+            <input type="hidden" name="opinionId" value="${opinion.id}" />
+            <input type="text" name="adminReply" placeholder="Odpowiedz na tę opinię..." />
+            <input type="submit" value="Odpowiedz" />
+          </form>
+        </td>
       </tr>
     </c:forEach>
-    <br>
   </table>
 </div>
 <form action="/goBackAdminPage" method="post" class="form-admin-container">

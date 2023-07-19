@@ -21,6 +21,16 @@ public class Opinion {
     @Min(1)
     private int rating;
 
+    private String adminReply;
+
+    public String getAdminReply() {
+        return adminReply;
+    }
+
+    public void setAdminReply(String adminReply) {
+        this.adminReply = adminReply;
+    }
+
     public String getName() {
         return name;
     }

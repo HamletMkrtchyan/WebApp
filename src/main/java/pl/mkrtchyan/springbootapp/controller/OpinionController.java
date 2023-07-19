@@ -25,19 +25,31 @@ public class OpinionController {
     }
 
     @GetMapping("/opinions")
-    public String showOpinionsForm(Model model){
+    public String showOpinionsForm(Model model) {
         List<Opinion> opinions = opinionRepository.findAll();
         model.addAttribute("opinions", opinions);
         return "opinion";
     }
 
     @PostMapping("/opinionForm")
-    public String DoOpinionForm(@ModelAttribute Opinion opinion,  Model model){
+    public String DoOpinionForm(@ModelAttribute Opinion opinion, Model model) {
         opinionRepository.save(opinion);
+        return "redirect:/opinions";
+
+    }
+
+
+    @PostMapping("/adminReply")
+    public String adminReply(@RequestParam("adminReply") String adminReply, @RequestParam("opinionId") Long opinionId, Model model) {
+        model.addAttribute("adminReply", adminReply);
+        Opinion opinion = opinionRepository.findById(opinionId).orElseThrow(() -> new IllegalArgumentException("Invalid opinion Id:" + opinionId));
+        opinion.setAdminReply(adminReply);
+        opinionRepository.save(opinion);
+
         List<Opinion> opinions = opinionRepository.findAll();
         model.addAttribute("opinions", opinions);
-        return "/opinion";
 
+        return "opinionList";
 
     }
 }

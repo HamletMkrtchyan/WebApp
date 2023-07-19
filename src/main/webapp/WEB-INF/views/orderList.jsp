@@ -9,7 +9,7 @@
 <body class="order-admin-page-body">
 
 <header class="site-header">
-  <h1 class="header-title">Nasz Sklep Mięsny Kraina - Strona Admin</h1>
+  <h1 class="header-title">Nasz Sklep Waga Mięsa - Strona Admin</h1>
   <nav class="header-nav">
     <ul class="nav-list">
       <li class="nav-item"><a href="/">Strona Główna</a></li>

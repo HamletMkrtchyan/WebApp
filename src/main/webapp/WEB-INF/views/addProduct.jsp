@@ -8,7 +8,7 @@
 </head>
 <body class="product-add-body">
 <header class="site-header">
-    <h1 class="header-title">Nasz Sklep Mięsny Kraina - Strona Admin</h1>
+    <h1 class="header-title">Nasz Sklep Waga Mięsa - Strona Admin</h1>
     <nav class="header-nav">
         <ul class="nav-list">
             <li class="nav-item"><a href="/">Strona Główna</a></li>
@@ -29,7 +29,7 @@
             <input type="text" id="description" name="description" placeholder="Opis"><br><br>
             <label for="price">Cena:</label>
             <input type="text" id="price" name="price" placeholder="Cena" required oninvalid="this.setCustomValidity('Proszę podać cenę')" oninput="this.setCustomValidity('')"><br><br>
-            <input type="submit" value="Dodaj">
+            <input type="submit" value="Dodaj produkt do listy">
         </form>
         <form action="/goBackAdminPage" method="post" class="admin-back-form">
             <input type="submit" value="Powrót do Admin" class="admin-back-btn">

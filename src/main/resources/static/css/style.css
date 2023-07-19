@@ -156,9 +156,11 @@ body.site-body {
     margin: 10px;
 }
 .form-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    width: 670px;
+
 }
 
 .section-title {
@@ -555,9 +557,75 @@ body.site-body {
 .search-button:hover {
     background-color: #545a5d;
 }
+.opinion-block {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
 
+.admin-reply {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
 
-
+.admin-reply-header {
+    color: #dc3545;
+}
+.opinions-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.opinions-admin-table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.reply-form {
+    display: flex;
+    gap: 10px;
+}
+.reply-form input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+}
+.reply-form input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+}
+.reply-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.rating input {
+    display: none;
+}
+.rating label {
+    font-size: 26px;
+    color: #7c7c7c;
+    cursor: pointer;
+    padding: 0 3px;
+}
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+    color: #ffa822;
+}
 
 
 

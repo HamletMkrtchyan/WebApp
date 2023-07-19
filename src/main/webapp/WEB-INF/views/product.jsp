@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@
         <div class="product-card">
             <h3 class="product-title">${product.name}</h3>
             <p class="product-desc">Opis: ${product.description}</p>
-            <p class="product-price">Cena: <span>${product.price} zł/kg</span></p>
+            <p class="product-price">Cena: <span><fmt:formatNumber value="${product.price}" type="number" minFractionDigits="2" maxFractionDigits="2"/> zł/kg</span></p>
 
         </div>
     </c:forEach>
