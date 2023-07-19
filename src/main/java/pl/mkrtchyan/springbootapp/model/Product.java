@@ -12,10 +12,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Name is mandatory")
+    @NotBlank
     @Column(unique = true)
     private String name;
-    @Size(max = 200)
     private String description;
     @Min(0)
     private double price;

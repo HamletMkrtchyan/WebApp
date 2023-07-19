@@ -48,6 +48,9 @@ public class AdminController {
     @PostMapping("/productAdd")
     public String DoAddProductForm(@ModelAttribute Product product, Model model) {
         model.addAttribute("product", product);
+       if (productRepository.existsByName(product.getName())){
+           return "redirect:/addProduct";
+       }
         productRepository.save(product);
         return "redirect:/addProduct";
 

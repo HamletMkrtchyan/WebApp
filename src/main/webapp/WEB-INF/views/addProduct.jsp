@@ -23,18 +23,25 @@
     <div class="product-add-form-container">
         <form action="/productAdd" method="post" class="product-add-form">
             <h2 class="product-add-heading">Dodaj produkt</h2>
+
             <label for="name">Nazwa:</label>
-            <input type="text" id="name" name="name" placeholder="Nazwa" required oninvalid="this.setCustomValidity('Proszę wprowadzić nazwę produktu')" oninput="this.setCustomValidity('')"><br><br>
+            <input type="text" id="name" name="name" placeholder="Nazwa" required
+                   oninvalid="this.setCustomValidity('Proszę wprowadzić nazwę produktu')"
+                   oninput="this.setCustomValidity('')"><br><br>
             <label for="description">Opis:</label>
             <input type="text" id="description" name="description" placeholder="Opis"><br><br>
             <label for="price">Cena:</label>
-            <input type="text" id="price" name="price" placeholder="Cena" required oninvalid="this.setCustomValidity('Proszę podać cenę')" oninput="this.setCustomValidity('')"><br><br>
+            <input type="text" id="price" name="price" placeholder="Cena" required
+                   oninvalid="this.setCustomValidity('Proszę podać cenę')" oninput="this.setCustomValidity('')"><br><br>
             <input type="submit" value="Dodaj produkt do listy">
         </form>
         <form action="/goBackAdminPage" method="post" class="admin-back-form">
             <input type="submit" value="Powrót do Admin" class="admin-back-btn">
         </form>
     </div>
+    <c:if test="${not empty message}">
+        <div class="message">${message}</div>
+    </c:if>
     <div class="product-list-table-container">
         <h2 class="product-list-heading">Lista produktów</h2>
         <table class="product-list-table">
@@ -48,7 +55,9 @@
                 <tr>
                     <td>${product.name}</td>
                     <td>${product.description}</td>
-                    <td><fmt:formatNumber value="${product.price}" type="number" minFractionDigits="2" maxFractionDigits="2" /> zł/kg</td>
+                    <td><fmt:formatNumber value="${product.price}" type="number" minFractionDigits="2"
+                                          maxFractionDigits="2"/> zł/kg
+                    </td>
                     <td>
                         <a href="/updateAddedProduct?id=${product.id}"
                            onclick="return confirm('Czy na pewno chcesz edytować ten produkt?');">Edytuj</a>
