@@ -30,6 +30,13 @@ public class OrderController {
     }
 
 
+    @GetMapping("/makeOrder")
+    public String makeOrder(Model model) {
+        List<Product> products = productRepository.findAll();
+        model.addAttribute("products", products);
+        return "makeOrder";
+    }
+
     @GetMapping("/make-order-form")
     public String makeOrderShowForm(Model model) {
         Order order = new Order();

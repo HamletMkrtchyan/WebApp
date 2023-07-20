@@ -31,7 +31,7 @@
             <label for="description">Opis:</label>
             <input type="text" id="description" name="description" placeholder="Opis"><br><br>
             <label for="price">Cena:</label>
-            <input type="text" id="price" name="price" placeholder="Cena" required
+            <input type="number" id="price" name="price" placeholder="Cena" step="0.01" min="0" required
                    oninvalid="this.setCustomValidity('Proszę podać cenę')" oninput="this.setCustomValidity('')"><br><br>
             <input type="submit" value="Dodaj produkt do listy">
         </form>

@@ -24,12 +24,14 @@ public class OpinionController {
         this.userRepository = userRepository;
     }
 
+
     @GetMapping("/opinions")
     public String showOpinionsForm(Model model) {
         List<Opinion> opinions = opinionRepository.findAll();
         model.addAttribute("opinions", opinions);
         return "opinion";
     }
+
 
     @PostMapping("/opinionForm")
     public String DoOpinionForm(@ModelAttribute Opinion opinion, Model model) {
@@ -41,6 +43,7 @@ public class OpinionController {
 
     @PostMapping("/adminReply")
     public String adminReply(@RequestParam("adminReply") String adminReply, @RequestParam("opinionId") Long opinionId, Model model) {
+
         model.addAttribute("adminReply", adminReply);
         Opinion opinion = opinionRepository.findById(opinionId).orElseThrow(() -> new IllegalArgumentException("Invalid opinion Id:" + opinionId));
         opinion.setAdminReply(adminReply);

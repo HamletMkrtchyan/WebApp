@@ -5,12 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.mkrtchyan.springbootapp.model.*;
-import pl.mkrtchyan.springbootapp.repo.OpinionRepository;
-import pl.mkrtchyan.springbootapp.repo.OrderRepository;
-import pl.mkrtchyan.springbootapp.repo.ProductRepository;
-import pl.mkrtchyan.springbootapp.repo.UserRepository;
+import pl.mkrtchyan.springbootapp.repo.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -20,22 +16,27 @@ public class AdminController {
     private final OpinionRepository opinionRepository;
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
+    private final ContactMailRepository contactMailRepository;
 
-    public AdminController(ProductRepository productRepository, OpinionRepository opinionRepository, OrderRepository orderRepository, UserRepository userRepository) {
+    public AdminController(ProductRepository productRepository, OpinionRepository opinionRepository, OrderRepository orderRepository, UserRepository userRepository, ContactMailRepository contactMailRepository) {
         this.productRepository = productRepository;
         this.opinionRepository = opinionRepository;
         this.orderRepository = orderRepository;
         this.userRepository = userRepository;
+        this.contactMailRepository = contactMailRepository;
     }
 
     @PostMapping("/admin")
-    public String adminForm(@ModelAttribute Admin admin) {
+    public String adminForm(@ModelAttribute Admin admin, Model model) {
         if (admin.getPassword().toLowerCase().equals("admin")) {
+            List<ContactMail> contactMails = contactMailRepository.findAll();
+            model.addAttribute("contactMails", contactMails);
             return "adminPage";
         } else {
             return "admin";
         }
     }
+
 
     @GetMapping("/addProduct")
     public String ShowAddProductForm(Model model) {
@@ -44,6 +45,7 @@ public class AdminController {
         model.addAttribute("products", products);
         return "addProduct";
     }
+
 
     @PostMapping("/productAdd")
     public String DoAddProductForm(@ModelAttribute Product product, Model model) {
@@ -56,10 +58,14 @@ public class AdminController {
 
     }
 
+
     @PostMapping("/goBackAdminPage")
-    public String goBackAdminPage() {
+    public String goBackAdminPage(Model model) {
+        List<ContactMail> contactMails = contactMailRepository.findAll();
+        model.addAttribute("contactMails", contactMails);
         return "adminPage";
     }
+
 
     @GetMapping("/deleteAddedProduct")
     public String deleteAddedProduct(@RequestParam("id") Long id) {
@@ -70,6 +76,7 @@ public class AdminController {
         return "redirect:/addProduct";
     }
 
+
     @GetMapping("/updateAddedProduct")
     public String updateAddedProduct(@RequestParam("id") Long id, Model model) {
         Product product = productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid product Id:" + id));
@@ -77,12 +84,14 @@ public class AdminController {
         return "updateAddedProduct";
     }
 
+
     @PostMapping("/updateProduct")
     public String updateProduct(@ModelAttribute Product product, Model model) {
         model.addAttribute("product", product);
         productRepository.save(product);
         return "redirect:/addProduct";
     }
+
 
     @PostMapping("/goBackAddPage")
     public String goBackAddPage() {
@@ -98,6 +107,7 @@ public class AdminController {
 
     }
 
+
     @GetMapping("/orderList")
     public String orderListShow(Model model) {
         List<Order> orders = orderRepository.findAll(Sort.by(Sort.Direction.DESC, "orderTime"));
@@ -105,6 +115,7 @@ public class AdminController {
         return "orderList";
 
     }
+
 
     @PostMapping("/mark-as-done")
     public String markOrderAsDone(@RequestParam("id") Long id, Model model) {

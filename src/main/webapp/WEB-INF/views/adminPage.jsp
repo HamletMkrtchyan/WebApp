@@ -20,6 +20,26 @@
     </nav>
 </header>
 
+<main class="admin-site-main">
+    <section class="admin-section-block">
+        <h2 class="admin-section-title">Wiadomości od użytkowników</h2>
+        <div class="admin-section-content">
+            <c:if test="${empty contactMails}">
+                <p class="admin-empty-message">Brak wiadomości.</p>
+            </c:if>
+            <c:forEach var="contactMail" items="${contactMails}">
+                <div class="admin-message-item">
+                    <h3 class="admin-message-subject">${contactMail.topic}</h3>
+                    <p class="admin-message-info">Od: ${contactMail.user.firstName}
+                        (<a class="admin-message-email-link" href="mailto:${contactMail.user.email}">
+                                ${contactMail.user.email}</a>)</p>
+                    <p class="admin-message-content">${contactMail.emailMessage}</p>
+                </div>
+            </c:forEach>
+        </div>
+    </section>
+</main>
+
 
 <footer class="site-footer">
     <p class="footer-text">&copy; 2023 Nasz Sklep Mięsny. Wszystkie prawa zastrzeżone.</p>

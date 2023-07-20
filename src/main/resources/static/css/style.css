@@ -628,6 +628,117 @@ body.site-body {
 }
 
 
+/* Styling for the meat shop contact form */
+.meat-shop-contact-form {
+    width: 100%;
+    max-width: 500px;
+    margin-left: 24px;
+    margin-bottom: 35px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+.meat-shop-contact-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.meat-shop-contact-input, .meat-shop-contact-textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.meat-shop-contact-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.meat-shop-contact-submit {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.meat-shop-contact-submit:hover {
+    background-color: #444;
+}
+.admin-site-main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.admin-section-block {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.admin-section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+
+.admin-section-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-empty-message {
+    color: #999;
+    font-style: italic;
+}
+
+.admin-message-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.admin-message-subject {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.admin-message-info {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.admin-message-info .admin-message-email-link {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.admin-message-content {
+    font-size: 1em;
+    color: #333;
+}
+
+
+
+
 
 
 
