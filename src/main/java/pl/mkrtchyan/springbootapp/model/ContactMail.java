@@ -1,6 +1,7 @@
 package pl.mkrtchyan.springbootapp.model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class ContactMail {
@@ -14,6 +15,17 @@ public class ContactMail {
     private String topic;
 
     private String emailMessage;
+
+    @Column
+    private LocalDateTime date;
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
     public Long getId() {
         return id;

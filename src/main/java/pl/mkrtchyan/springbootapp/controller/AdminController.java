@@ -29,7 +29,7 @@ public class AdminController {
     @PostMapping("/admin")
     public String adminForm(@ModelAttribute Admin admin, Model model) {
         if (admin.getPassword().toLowerCase().equals("admin")) {
-            List<ContactMail> contactMails = contactMailRepository.findAll();
+            List<ContactMail> contactMails = contactMailRepository.findAllByOrderByDateDesc();
             model.addAttribute("contactMails", contactMails);
             return "adminPage";
         } else {
@@ -101,7 +101,7 @@ public class AdminController {
 
     @GetMapping("/opinionList")
     public String opinionList(Model model) {
-        List<Opinion> opinions = opinionRepository.findAll();
+        List<Opinion> opinions = opinionRepository.findAllByOrderByDateDesc();
         model.addAttribute("opinions", opinions);
         return "opinionList";
 

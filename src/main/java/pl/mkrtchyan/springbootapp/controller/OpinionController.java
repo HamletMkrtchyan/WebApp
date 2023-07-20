@@ -12,6 +12,7 @@ import pl.mkrtchyan.springbootapp.model.User;
 import pl.mkrtchyan.springbootapp.repo.OpinionRepository;
 import pl.mkrtchyan.springbootapp.repo.UserRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -27,7 +28,7 @@ public class OpinionController {
 
     @GetMapping("/opinions")
     public String showOpinionsForm(Model model) {
-        List<Opinion> opinions = opinionRepository.findAll();
+        List<Opinion> opinions = opinionRepository.findAllByOrderByDateDesc();
         model.addAttribute("opinions", opinions);
         return "opinion";
     }
@@ -35,6 +36,7 @@ public class OpinionController {
 
     @PostMapping("/opinionForm")
     public String DoOpinionForm(@ModelAttribute Opinion opinion, Model model) {
+        opinion.setDate(LocalDateTime.now());
         opinionRepository.save(opinion);
         return "redirect:/opinions";
 
@@ -49,7 +51,7 @@ public class OpinionController {
         opinion.setAdminReply(adminReply);
         opinionRepository.save(opinion);
 
-        List<Opinion> opinions = opinionRepository.findAll();
+        List<Opinion> opinions = opinionRepository.findAllByOrderByDateDesc();
         model.addAttribute("opinions", opinions);
 
         return "opinionList";

@@ -9,6 +9,8 @@ import pl.mkrtchyan.springbootapp.model.User;
 import pl.mkrtchyan.springbootapp.repo.ContactMailRepository;
 import pl.mkrtchyan.springbootapp.repo.UserRepository;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class ContactMailController {
     private final ContactMailRepository contactMailRepository;
@@ -21,6 +23,7 @@ public class ContactMailController {
 
     @PostMapping("/sendEmail")
     public String sendEmailForm(@ModelAttribute ContactMail contactMail, @ModelAttribute User user, Model model) {
+        contactMail.setDate(LocalDateTime.now());
         contactMail.setUser(user);
         userRepository.save(user);
         contactMailRepository.save(contactMail);

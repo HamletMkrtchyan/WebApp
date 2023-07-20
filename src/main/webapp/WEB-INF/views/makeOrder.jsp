@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -44,7 +45,9 @@
       <label for="product">Produkt:</label>
       <select id="product" name="productId"  class="form-input">
         <c:forEach var="product" items="${products}">
-          <option value="${product.id}">${product.name} - ${product.price}</option>
+          <option value="${product.id}">
+              ${product.name} - <fmt:formatNumber value="${product.price}" type="currency" currencySymbol="" />
+          </option>
         </c:forEach>
       </select>
 
