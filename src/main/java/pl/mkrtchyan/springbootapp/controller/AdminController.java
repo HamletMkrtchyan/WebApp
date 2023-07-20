@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.mkrtchyan.springbootapp.model.*;
 import pl.mkrtchyan.springbootapp.repo.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -40,7 +41,7 @@ public class AdminController {
 
     @GetMapping("/addProduct")
     public String ShowAddProductForm(Model model) {
-        List<Product> products = productRepository.findAll();
+        List<Product> products = productRepository.findAllByOrderByDateDesc();
         model.addAttribute("product", new Product());
         model.addAttribute("products", products);
         return "addProduct";
@@ -49,6 +50,7 @@ public class AdminController {
 
     @PostMapping("/productAdd")
     public String DoAddProductForm(@ModelAttribute Product product, Model model) {
+        product.setDate(LocalDateTime.now());
         model.addAttribute("product", product);
        if (productRepository.existsByName(product.getName())){
            return "redirect:/addProduct";
