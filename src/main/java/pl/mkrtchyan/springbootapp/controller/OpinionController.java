@@ -25,14 +25,12 @@ public class OpinionController {
         this.userRepository = userRepository;
     }
 
-
     @GetMapping("/opinions")
     public String showOpinionsForm(Model model) {
         List<Opinion> opinions = opinionRepository.findAllByOrderByDateDesc();
         model.addAttribute("opinions", opinions);
         return "opinion";
     }
-
 
     @PostMapping("/opinionForm")
     public String DoOpinionForm(@ModelAttribute Opinion opinion, Model model) {
@@ -41,7 +39,6 @@ public class OpinionController {
         return "redirect:/opinions";
 
     }
-
 
     @PostMapping("/adminReply")
     public String adminReply(@RequestParam("adminReply") String adminReply, @RequestParam("opinionId") Long opinionId, Model model) {
