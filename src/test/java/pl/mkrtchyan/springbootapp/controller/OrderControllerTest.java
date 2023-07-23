@@ -2,89 +2,74 @@ package pl.mkrtchyan.springbootapp.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 import pl.mkrtchyan.springbootapp.model.Order;
 import pl.mkrtchyan.springbootapp.model.Product;
 import pl.mkrtchyan.springbootapp.model.User;
-import pl.mkrtchyan.springbootapp.repo.OrderRepository;
-import pl.mkrtchyan.springbootapp.repo.ProductRepository;
-import pl.mkrtchyan.springbootapp.repo.UserRepository;
+import pl.mkrtchyan.springbootapp.service.OrderService;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 class OrderControllerTest {
 
     @Mock
-    private OrderRepository orderRepository;
-
+    private OrderService orderService;
     @Mock
-    private ProductRepository productRepository;
-    @Mock
-    private UserRepository userRepository;
+    private Model model;
 
-    @InjectMocks
     private OrderController orderController;
 
     @BeforeEach
-    void setup() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
+        orderController = new OrderController(orderService);
     }
 
-
     @Test
-    void testMakeOrder(){
-        List<Product> products = Arrays.asList(new Product(), new Product());
-        when(productRepository.findAll()).thenReturn(products);
-
-        Model model = mock(Model.class);
+    void makeOrder() {
+        List<Product> productList = Collections.singletonList(new Product());
+        when(orderService.getAllProducts()).thenReturn(productList);
 
         String viewName = orderController.makeOrder(model);
 
+        verify(model, times(1)).addAttribute("products", productList);
         assertEquals("makeOrder", viewName);
-        verify(model).addAttribute("products", products);
     }
 
     @Test
-    void testMakeOrderShowForm() {
-
-        List<Product> products = Arrays.asList(new Product(), new Product());
-        when(productRepository.findAll()).thenReturn(products);
-
-        Model model = mock(Model.class);
+    void makeOrderShowForm() {
+        Order order = new Order();
+        List<Product> productList = Collections.singletonList(new Product());
+        when(orderService.getAllProducts()).thenReturn(productList);
 
         String viewName = orderController.makeOrderShowForm(model);
 
+        verify(model, times(1)).addAttribute("products", productList);
+        verify(model, times(1)).addAttribute("order", order);
         assertEquals("makeOrder", viewName);
-        verify(model).addAttribute(eq("products"), eq(products));
-        verify(model).addAttribute(eq("order"), isA(Order.class));
     }
 
     @Test
-    void testMakeOrderForm(){
+    void makeOrderForm() {
         User user = new User();
-        double quantity = 5.0;
-        Long productId = 1L;
         Product product = new Product();
-        when(productRepository.findById(productId)).thenReturn(Optional.of(product));
-
-        Model model = mock(Model.class);
+        double quantity = 1;
+        Long productId = 1L;
+        when(orderService.getProductById(any(Long.class))).thenReturn(product);
+        when(orderService.saveUser(any(User.class))).thenReturn(user);
+        when(orderService.createOrder(any(User.class), any(Double.class), any(Long.class))).thenReturn(new Order());
 
         String viewName = orderController.makeOrderForm(user, quantity, productId, model);
 
+        verify(model, times(1)).addAttribute("product", product);
+        verify(model, times(1)).addAttribute("quantity", quantity);
         assertEquals("order_confirmation", viewName);
-        verify(userRepository).save(user);
-        verify(orderRepository).save(any(Order.class));
-
     }
-
-
-
 }

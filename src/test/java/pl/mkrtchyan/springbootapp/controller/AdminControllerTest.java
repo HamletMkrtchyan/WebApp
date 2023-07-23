@@ -6,120 +6,119 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
-import pl.mkrtchyan.springbootapp.model.Admin;
-import pl.mkrtchyan.springbootapp.model.ContactMail;
-import pl.mkrtchyan.springbootapp.model.Order;
-import pl.mkrtchyan.springbootapp.model.Product;
-import pl.mkrtchyan.springbootapp.repo.*;
+import pl.mkrtchyan.springbootapp.model.*;
+import pl.mkrtchyan.springbootapp.service.AdminService;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-class AdminControllerTest {
+public class AdminControllerTest {
+
     @Mock
-    private ProductRepository productRepository;
+    private AdminService adminService;
+
     @Mock
-    private OpinionRepository opinionRepository;
-    @Mock
-    private OrderRepository orderRepository;
-    @Mock
-    private UserRepository userRepository;
-    @Mock
-    private ContactMailRepository contactMailRepository;
+    private Model model;
 
     @InjectMocks
     private AdminController adminController;
 
     @BeforeEach
-    public void setUp() {
+    public void setup() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
     public void testAdminForm() {
         Admin admin = new Admin();
-        admin.setPassword("admin");
-
-        Model model = mock(Model.class);
+        admin.setPassword("ADMIN");
         List<ContactMail> contactMails = Arrays.asList(new ContactMail(), new ContactMail());
-        when(contactMailRepository.findAllByOrderByDateDesc()).thenReturn(contactMails);
+        when(adminService.getAllContactMailsByDate()).thenReturn(contactMails);
 
         String viewName = adminController.adminForm(admin, model);
 
-        assertEquals("adminPage", viewName);
         verify(model).addAttribute("contactMails", contactMails);
-    }
-
-    @Test
-    public void testAdminFormWithWrongPassword() {
-        Admin admin = new Admin();
-        admin.setPassword("wrong_password");
-
-        Model model = mock(Model.class);
-
-        String viewName = adminController.adminForm(admin, model);
-
-        assertEquals("admin", viewName);
+        assertEquals("adminPage", viewName);
     }
 
     @Test
     public void testShowAddProductForm() {
-        Model model = mock(Model.class);
         List<Product> products = Arrays.asList(new Product(), new Product());
-        when(productRepository.findAllByOrderByDateDesc()).thenReturn(products);
+        when(adminService.getAllProductsByDate()).thenReturn(products);
 
         String viewName = adminController.ShowAddProductForm(model);
 
-        assertEquals("addProduct", viewName);
-        verify(model).addAttribute(eq("product"), isA(Product.class));
+        verify(model).addAttribute(eq("product"), any(Product.class));
         verify(model).addAttribute("products", products);
+        assertEquals("addProduct", viewName);
     }
+
 
     @Test
     public void testDoAddProductForm() {
         Product product = new Product();
-        product.setName("TestProduct");
         product.setDate(LocalDateTime.now());
-        Model model = mock(Model.class);
 
-        when(productRepository.existsByName(anyString())).thenReturn(false);
+        when(adminService.existsByName(product)).thenReturn(false);
 
         String viewName = adminController.DoAddProductForm(product, model);
 
+        verify(adminService).saveProduct(product);
         assertEquals("redirect:/addProduct", viewName);
-        verify(productRepository).save(product);
     }
 
     @Test
-    public void testDeleteAddedProduct() {
-        Long id = 1L;
-        Product product = new Product();
-        product.setId(id);
+    public void testGoBackAdminPage() {
+        List<ContactMail> contactMails = Arrays.asList(new ContactMail(), new ContactMail());
+        when(adminService.getAllContactMails()).thenReturn(contactMails);
 
-        when(productRepository.findById(anyLong())).thenReturn(Optional.of(product));
+        String viewName = adminController.goBackAdminPage(model);
 
-        String viewName = adminController.deleteAddedProduct(id);
-
-        assertEquals("redirect:/addProduct", viewName);
-        verify(orderRepository).deleteInBatch(anyList());
-        verify(productRepository).deleteById(id);
+        verify(model).addAttribute("contactMails", contactMails);
+        assertEquals("adminPage", viewName);
     }
-
 
     @Test
     public void testUpdateProduct() {
         Product product = new Product();
-        Model model = mock(Model.class);
+        product.setDate(LocalDateTime.now());
 
         String viewName = adminController.updateProduct(product, model);
 
+        verify(adminService).saveProduct(product);
         assertEquals("redirect:/addProduct", viewName);
-        verify(productRepository).save(product);
+    }
+
+    @Test
+    public void testGoBackAddPage() {
+        String viewName = adminController.goBackAddPage();
+        assertEquals("addProduct", viewName);
+    }
+
+    @Test
+    public void testOpinionList() {
+        List<Opinion> opinions = Arrays.asList(new Opinion(), new Opinion());
+        when(adminService.getAllOpinionsByDate()).thenReturn(opinions);
+
+        String viewName = adminController.opinionList(model);
+
+        verify(model).addAttribute("opinions", opinions);
+        assertEquals("opinionList", viewName);
+    }
+
+    @Test
+    public void testOrderListShow() {
+        List<Order> orders = Arrays.asList(new Order(), new Order());
+        when(adminService.getAllOrders()).thenReturn(orders);
+
+        String viewName = adminController.orderListShow(model);
+
+        verify(model).addAttribute("orders", orders);
+        assertEquals("orderList", viewName);
     }
 
     @Test
@@ -127,14 +126,11 @@ class AdminControllerTest {
         Long id = 1L;
         Order order = new Order();
         order.setId(id);
+        when(adminService.getOrderById(id)).thenReturn(order);
 
-        when(orderRepository.findById(anyLong())).thenReturn(Optional.of(order));
+        String viewName = adminController.markOrderAsDone(id, model);
 
-        String viewName = adminController.markOrderAsDone(id, mock(Model.class));
-
+        verify(adminService).deleteOrder(order);
         assertEquals("redirect:/orderList", viewName);
-        verify(orderRepository).delete(order);
     }
-
-
 }

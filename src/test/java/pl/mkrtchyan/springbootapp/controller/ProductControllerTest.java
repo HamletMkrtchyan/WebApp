@@ -2,56 +2,69 @@ package pl.mkrtchyan.springbootapp.controller;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
-import org.springframework.validation.support.BindingAwareModelMap;
 import pl.mkrtchyan.springbootapp.model.Product;
-import pl.mkrtchyan.springbootapp.repo.ProductRepository;
+import pl.mkrtchyan.springbootapp.service.ProductService;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class ProductControllerTest {
-    @Mock
-    private ProductRepository productRepository;
 
-    @InjectMocks
+    @Mock
+    private ProductService productService;
+    @Mock
+    private Model model;
+
     private ProductController productController;
 
     @BeforeEach
-    void setup() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
+        productController = new ProductController(productService);
     }
 
     @Test
-    void productSearchFormShouldReturnMatchedProducts() {
+    void product() {
+        List<Product> productList = Arrays.asList(new Product(), new Product());
+        when(productService.getAllProducts()).thenReturn(productList);
 
-        Product product1 = new Product();
-        product1.setName("Produkt 1");
-        Product product2 = new Product();
-        product2.setName("Produkt 2");
-        List<Product> products = Arrays.asList(product1, product2);
+        String viewName = productController.product(model);
 
-        when(productRepository.findAll()).thenReturn(products);
-
-        Model model = new BindingAwareModelMap();
-
-
-        String viewName = productController.productSearchForm("Produkt 1", model);
-
-
-        assertNotNull(viewName);
+        verify(model, times(1)).addAttribute("products", productList);
         assertEquals("product", viewName);
+    }
 
-        List<Product> modelProducts = (List<Product>) model.getAttribute("products");
-        assertNotNull(modelProducts);
-        assertEquals(1, modelProducts.size());
-        assertEquals(product1, modelProducts.get(0));
+    @Test
+    void productSearchForm() {
+        String search = "test";
+        Product product1 = new Product();
+        product1.setName("testProduct");
+        Product product2 = new Product();
+        product2.setName("anotherProduct");
+
+        List<Product> productList = Arrays.asList(product1, product2);
+        when(productService.getAllProducts()).thenReturn(productList);
+
+        String viewName = productController.productSearchForm(search, model);
+
+        verify(model, times(1)).addAttribute("products", Arrays.asList(product1));
+        assertEquals("product", viewName);
+    }
+
+    @Test
+    void goBackAllProductPage() {
+        List<Product> productList = Arrays.asList(new Product(), new Product());
+        when(productService.getAllProducts()).thenReturn(productList);
+
+        String viewName = productController.goBackAllProductPage(model);
+
+        verify(model, times(1)).addAttribute("products", productList);
+        assertEquals("product", viewName);
     }
 }
