@@ -6,27 +6,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.mkrtchyan.springbootapp.model.ContactMail;
 import pl.mkrtchyan.springbootapp.model.User;
-import pl.mkrtchyan.springbootapp.repo.ContactMailRepository;
-import pl.mkrtchyan.springbootapp.repo.UserRepository;
+import pl.mkrtchyan.springbootapp.service.ContactMailService;
 
 import java.time.LocalDateTime;
 
 @Controller
 public class ContactMailController {
-    private final ContactMailRepository contactMailRepository;
-    private final UserRepository userRepository;
+    private final ContactMailService contactMailService;
 
-    public ContactMailController(ContactMailRepository contactMailRepository, UserRepository userRepository) {
-        this.contactMailRepository = contactMailRepository;
-        this.userRepository = userRepository;
+    public ContactMailController(ContactMailService contactMailService) {
+        this.contactMailService = contactMailService;
     }
 
     @PostMapping("/sendEmail")
     public String sendEmailForm(@ModelAttribute ContactMail contactMail, @ModelAttribute User user, Model model) {
         contactMail.setDate(LocalDateTime.now());
         contactMail.setUser(user);
-        userRepository.save(user);
-        contactMailRepository.save(contactMail);
+        contactMailService.saveUser(user);
+        contactMailService.saveContactMail(contactMail);
 
 
         return "redirect:/contact";

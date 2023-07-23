@@ -10,12 +10,5 @@ import pl.mkrtchyan.springbootapp.model.User;
 import pl.mkrtchyan.springbootapp.repo.UserRepository;
 
 @Controller
-
 public class UserController {
-
-
-
-
-
-
 }
