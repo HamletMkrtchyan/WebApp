@@ -26,6 +26,7 @@ public class OpinionService {
     }
 
 
+
     public List<Opinion> getAllOpinions(){
         return opinionRepository.findAll();
     }
