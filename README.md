@@ -1,36 +1,30 @@
-# WebApp
+"Meat by Weight" Project
 
-Miesa Na Wagę 
+Project Description
 
-Opis projektu
+"Meat by Weight" is a web application that functions as a meat store, allowing customers to browse, order meat products, rate and review the store. On the other side, the application enables administrators to manage store products, review and mark orders as completed, and view user reviews. The application has been built using technologies such as Spring Boot, Hibernate, MySQL, JSP, JavaScript, Maven, and CSS.
 
-Miesa Na Wagę to aplikacja webowa typu sklep mięsny, która pozwala klientom na przeglądanie, zamawianie produktów mięsnych oraz ocenianie i przeglądanie opinii o sklepie. Z drugiej strony, aplikacja umożliwia administratorom zarządzanie produktami w sklepie, przeglądanie i oznaczanie jako wykonane zamówień oraz przeglądanie opinii użytkowników. Aplikacja została zbudowana przy użyciu technologii takich jak Spring Boot, Hibernate, MySQL, JSP, JavaScript, Maven oraz CSS.
+Functionalities: Customer Page:
 
-Funkcjonalności: 
-Strona Klienta
+Browsing Products: Customers can browse through a list of all available meat products in the store.
+Ordering Products: Customers can place orders for selected products.
+Adding Reviews: Customers can share their opinions about the store by adding reviews.
+Reviewing Reviews: Customers can view reviews from other users.
+Sending Messages to Administrators: Customers can send messages to store administrators.
 
- - Przeglądanie Produktów: Klienci mogą przeglądać listę wszystkich dostępnych produktów mięsnych w sklepie.
- - Zamawianie Produktów: Klienci mogą składać zamówienia na wybrane produkty.
- - Dodawanie Opinii: Klienci mogą dodawać swoje opinie na temat sklepu.
- - Przeglądanie Opinii: Klienci mogą przeglądać opinie innych użytkowników.
- - Wysyłanie Wiadomości do Administratora: Klienci mogą wysyłać wiadomości do administratorów sklepu.
+Admin Page:
 
+Managing Products: Administrators can add, delete, and edit products in the store.
+Viewing Orders: Administrators can view a list of all orders.
+Marking Orders as Completed: After fulfilling an order, administrators can mark it as completed.
+Reviewing Reviews: Administrators can go through reviews and respond to feedback written by customers.
+Viewing Messages from Customers: Administrators can check messages sent by customers and respond as needed.
+Technologies:
 
-Strona Admina
-
- - Zarządzanie Produktami: Administratorzy mogą dodawać, usuwać oraz edytować produkty w sklepie.
- - Przeglądanie Zamówień: Administratorzy mogą przeglądać listę wszystkich zamówień.
- - Oznaczanie Zamówień Jako Wykonane: Po zrealizowaniu zamówienia, administratorzy mogą oznaczyć je jako wykonane.
- - Przeglądanie Opinii: Administratorzy mogą przeglądać opinie i odpowiedzieć na opinie napisane przez klientów.
- - Przeglądanie Wiadomości od Klientów: Administratorzy mogą przeglądać wiadomości wysłane przez klientów i odpowiadać na nie w razie 
-   potrzeby.
-   
-Technologie:
-
- - Spring Boot: Wykorzystane do stworzenia back-endu aplikacji.
- - Hibernate: Narzędzie ORM (Object-Relational Mapping) ułatwiające interakcje z bazą danych.
- - MySQL: Użyte jako baza danych do przechowywania informacji o produktach, zamówieniach oraz opinii.
- - JSP: Wykorzystane do stworzenia dynamicznych stron HTML po stronie serwera.
- - JavaScript: Użyte do dodania interaktywności do strony klienta.
- - Maven: Narzędzie do automatyzacji budowy oprogramowania, które pomaga zarządzać zależnościami i procesem budowy projektu.
- - CSS: Użyte do stylizacji i personalizacji interfejsu użytkownika aplikacji.
+Spring Boot: Used to create the application's backend.
+Hibernate: An Object-Relational Mapping (ORM) tool that facilitates interactions with the database.
+MySQL: Utilized as the database to store information about products, orders, and reviews.
+JSP: Used to create dynamic server-side HTML pages.
+JavaScript: Used to add interactivity to the customer-side page.
+Maven: A software automation tool that helps manage dependencies and the project's building process.
+CSS: Used for styling and customizing the user interface of the application.
